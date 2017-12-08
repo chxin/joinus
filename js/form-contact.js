@@ -6,6 +6,7 @@ $(document).ready(function() {
 	$('form#form .error').remove();
 	var hasError = false;
     var contentError = false;
+    var showError = false;
 	
     $('.requiredField').each(function() {
 	if(jQuery.trim($(this).val()) == '') {
@@ -14,7 +15,7 @@ $(document).ready(function() {
     contentError = true;
     $(this).addClass('inputError');
     hasError = true;
-    } else if($(this).hasClass('email')) {
+    } else if(($(this).hasClass('email'))&&(!showError)) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     if(!emailReg.test(jQuery.trim($(this).val()))) {
     var labelText = $(this).prev('label').text();
@@ -23,6 +24,31 @@ $(document).ready(function() {
     $(this).parent().append('<span class="error" style=" font-size: 15px; color:none; border: solid 0px;border-radius:5px; width:100%; margin:10px 10px; padding:5px 33px; background:none;"></span>');
     $(this).addClass('inputError');
     hasError = true;
+    showError = true;
+    }
+    }
+    else if(($(this).hasClass('phone'))&&(!showError)) {
+    var phoneReg = /^1[3|4|5|8][0-9]\d{8}$/;
+    if(!phoneReg.test(jQuery.trim($(this).val()))) {
+    var labelText = $(this).prev('label').text();
+    // $(this).parent().append('<span class="error" style="color:yellow">邮箱格式不正确\\</span>');
+    $(this).parent().append('<span class="error" style="font-size: 15px; color:yellow; border:#FFF solid 2px;border-radius:5px; width:300px; margin:10px 10px; padding:5px 30px; background:red;">联系电话错误</span> ');
+    $(this).parent().append('<span class="error" style=" font-size: 15px; color:none; border: solid 0px;border-radius:5px; width:100%; margin:10px 10px; padding:5px 33px; background:none;"></span>');
+    $(this).addClass('inputError');
+    hasError = true;
+    showError = true;
+    }
+    }
+    else if(($(this).hasClass('college'))&&(!showError)) {
+    var idReg = /^[UumM][2][0][0-9]\d{6}$/;
+    if(!idReg.test(jQuery.trim($(this).val()))) {
+    var labelText = $(this).prev('label').text();
+    // $(this).parent().append('<span class="error" style="color:yellow">邮箱格式不正确\\</span>');
+    $(this).parent().append('<span class="error" style="font-size: 15px; color:yellow; border:#FFF solid 2px;border-radius:5px; width:300px; margin:10px 10px; padding:5px 30px; background:red;">学号错误</span> ');
+    $(this).parent().append('<span class="error" style=" font-size: 15px; color:none; border: solid 0px;border-radius:5px; width:100%; margin:10px 10px; padding:5px 33px; background:none;"></span>');
+    $(this).addClass('inputError');
+    hasError = true;
+    showError = true;
     }
     }
     });

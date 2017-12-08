@@ -44,7 +44,7 @@
         echo "</scrīpt>"; 
     }
     function goodbye2(){
-        echo "<!DOCTYPE html><html><head><script>function load(){window.location.href='http://nongchao.auto.hust.edu.cn';}</script></head><body onload='load()'><h1>Hello World!</h1></body></html>";
+        echo "<!DOCTYPE html><html><head><script>function load(){window.location.href='http://nongchao.auto.hust.edu.cn';}</script></head><body onload='load()'><h1>报名成功!</h1></body></html>";
     }
     sleep(2);
     storemessage();

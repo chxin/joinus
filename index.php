@@ -121,10 +121,10 @@
 								<div id="form-wrapper">
 									<form id="form" method="post" action="<?php echo htmlspecialchars('join.php'); ?>" name="send">
 										<input class="email_input requiredField name" id="name" name="name" type="text" placeholder="姓名" >
-										<input class="email_input requiredField subject" id="email" name="college" type="text" placeholder="学号"><br />								
+										<input class="email_input requiredField subject college" id="email" name="college" type="text" placeholder="学号"><br />								
 										<input class="email_input requiredField subject" id="email" name="class" type="text" placeholder="学院班级"><br />								
 										<input class="email_input requiredField email" id="email" name="email" type="text" placeholder="电子邮箱"><br />
-										<input class="email_input requiredField subject" id="email" name="phone" type="text" placeholder="联系电话"><br />										
+										<input class="email_input requiredField subject phone" id="email" name="phone" type="text" placeholder="联系电话"><br />										
 										<textarea class="email_input message" id="message" name="message" rows="3" 	placeholder="介绍自己"></textarea><br />
 										<button class="email_submit email_margin_top submit" type="submit" value="Submit" style="font-size: 20px">提交</button>
 									</form>
